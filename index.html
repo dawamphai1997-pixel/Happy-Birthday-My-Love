@@ -3,56 +3,344 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday My Love ❤️</title>
+  <title>Happy Birthday, TOM ❤️</title>
+
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#fff7fa,#fde8ef);color:#3d2f35;min-height:100vh;overflow-x:hidden}
-    .app{width:100%;max-width:520px;margin:0 auto;padding:18px}
-    .page{display:none;min-height:90vh;align-items:center;justify-content:center;flex-direction:column;text-align:center;animation:fade .5s ease}
-    .page.active{display:flex}
-    @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-    .card{width:100%;background:#fff;border-radius:28px;padding:22px;box-shadow:0 12px 35px rgba(0,0,0,.08)}
-    h1{font-size:34px;margin-bottom:8px;color:#d85d82}
-    h2{font-size:28px;margin-bottom:12px;color:#d85d82}
-    p{line-height:1.7;font-size:17px}
-    .date{font-size:15px;letter-spacing:2px;color:#9b7b86;margin-bottom:18px}
-    .photo{width:100%;border-radius:22px;margin:16px 0;object-fit:cover;max-height:520px}
-    .slideshow-frame{position:relative;width:100%;height:520px;border-radius:22px;overflow:hidden;margin:16px 0;background:#f7edf1}
-    .slide{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .7s ease;background:#f7edf1}
-    .slide.active{opacity:1}
-    .slide-count{font-size:13px;color:#9a7f88;margin-top:-4px}
-    .count{font-size:32px;font-weight:bold;color:#d85d82;margin:18px 0 6px}
-    .sub{color:#79666d;margin-top:6px}
-    .buttons{display:flex;gap:10px;margin-top:18px;width:100%}
-    button{flex:1;border:none;border-radius:999px;padding:14px 18px;font-size:16px;cursor:pointer;background:#e989a6;color:#fff;font-weight:bold}
-    button.secondary{background:#f2d5df;color:#9f4c68}
-    .heart{font-size:42px;margin-bottom:10px}
-    .quote{font-size:21px;line-height:1.8;color:#5f4c53}
-    .music-box{margin-top:18px;padding:18px;border-radius:22px;background:#fff4f7;border:1px solid #f3d4df}
-    .music-title{font-size:20px;font-weight:bold;color:#d85d82;margin-bottom:6px}
-    .music-sub{font-size:14px;color:#8f737d;margin-bottom:16px}
-    .play-button{width:100%;padding:15px 20px;border-radius:999px;background:#e989a6;color:#fff;border:0;font-size:17px;font-weight:bold}
-    .progress-wrap{margin-top:14px}
-    .progress{width:100%}
-    .time-row{display:flex;justify-content:space-between;font-size:12px;color:#9a7f88;margin-top:4px}
-    .small-note{margin-top:10px;font-size:14px;color:#9a7f88}
-    .footer{margin-top:20px;font-size:15px;color:#9a7f88}
-    audio{display:none}
-    @media(max-width:420px){.slideshow-frame{height:430px}h1{font-size:30px}h2{font-size:25px}.quote{font-size:19px}}
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:linear-gradient(180deg,#fff7fa,#fde8ef);
+      color:#3d2f35;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    .app{
+      width:100%;
+      max-width:520px;
+      margin:0 auto;
+      padding:18px;
+    }
+
+    .page{
+      display:none;
+      min-height:90vh;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      text-align:center;
+      animation:fade .5s ease;
+    }
+
+    .page.active{
+      display:flex;
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(10px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .card{
+      width:100%;
+      background:#fff;
+      border-radius:28px;
+      padding:22px;
+      box-shadow:0 12px 35px rgba(0,0,0,.08);
+    }
+
+    h1{
+      font-size:34px;
+      margin-bottom:8px;
+      color:#d85d82;
+    }
+
+    h2{
+      font-size:28px;
+      margin-bottom:12px;
+      color:#d85d82;
+    }
+
+    p{
+      line-height:1.7;
+      font-size:17px;
+    }
+
+    .date{
+      font-size:15px;
+      letter-spacing:2px;
+      color:#9b7b86;
+      margin-bottom:18px;
+    }
+
+    .photo{
+      width:100%;
+      border-radius:22px;
+      margin:16px 0;
+      object-fit:cover;
+      max-height:520px;
+    }
+
+    .slideshow-frame{
+      position:relative;
+      width:100%;
+      height:520px;
+      border-radius:22px;
+      overflow:hidden;
+      margin:16px 0;
+      background:#f7edf1;
+    }
+
+    .slide{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      opacity:0;
+      transition:opacity .7s ease;
+      background:#f7edf1;
+    }
+
+    .slide.active{
+      opacity:1;
+    }
+
+    .slide-count{
+      font-size:13px;
+      color:#9a7f88;
+      margin-top:-4px;
+    }
+
+    .count{
+      font-size:32px;
+      font-weight:bold;
+      color:#d85d82;
+      margin:18px 0 6px;
+    }
+
+    .sub{
+      color:#79666d;
+      margin-top:6px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:10px;
+      margin-top:18px;
+      width:100%;
+    }
+
+    button{
+      flex:1;
+      border:none;
+      border-radius:999px;
+      padding:14px 18px;
+      font-size:16px;
+      cursor:pointer;
+      background:#e989a6;
+      color:#fff;
+      font-weight:bold;
+    }
+
+    button.secondary{
+      background:#f2d5df;
+      color:#9f4c68;
+    }
+
+    .heart{
+      font-size:42px;
+      margin-bottom:10px;
+    }
+
+    .quote{
+      font-size:21px;
+      line-height:1.8;
+      color:#5f4c53;
+    }
+
+    .music-box{
+      margin-top:18px;
+      padding:18px;
+      border-radius:22px;
+      background:#fff4f7;
+      border:1px solid #f3d4df;
+    }
+
+    .music-title{
+      font-size:20px;
+      font-weight:bold;
+      color:#d85d82;
+      margin-bottom:6px;
+    }
+
+    .music-sub{
+      font-size:14px;
+      color:#8f737d;
+      margin-bottom:16px;
+    }
+
+    .play-button{
+      width:100%;
+      padding:15px 20px;
+      border-radius:999px;
+      background:#e989a6;
+      color:#fff;
+      border:0;
+      font-size:17px;
+      font-weight:bold;
+    }
+
+    .progress-wrap{
+      margin-top:14px;
+    }
+
+    .progress{
+      width:100%;
+    }
+
+    .time-row{
+      display:flex;
+      justify-content:space-between;
+      font-size:12px;
+      color:#9a7f88;
+      margin-top:4px;
+    }
+
+    .small-note{
+      margin-top:10px;
+      font-size:14px;
+      color:#9a7f88;
+    }
+
+    .footer{
+      margin-top:20px;
+      font-size:15px;
+      color:#9a7f88;
+    }
+
+    audio{
+      display:none;
+    }
+
+    @media(max-width:420px){
+      .slideshow-frame{
+        height:430px;
+      }
+
+      h1{
+        font-size:30px;
+      }
+
+      h2{
+        font-size:25px;
+      }
+
+      .quote{
+        font-size:19px;
+      }
+    }
   </style>
 </head>
+
 <body>
+
 <audio id="bgMusic" src="our-song.mp3" preload="metadata"></audio>
 
 <div class="app">
-  <!-- หน้า 1 : Happy Birthday + Slideshow 22 รูป -->
+
+  <!-- หน้า 1 : เพลง -->
   <section class="page active">
     <div class="card">
-      <div class="heart">❤️</div>
-      <div class="date">20 SEPTEMBER 2026</div>
-      <h1>Happy Birthday My Love</h1>
 
-      <div class="slideshow-frame" id="slideshowFrame">
+      <div class="heart">❤️</div>
+
+      <div class="date">
+        20 SEPTEMBER 2026
+      </div>
+
+      <h1>Happy Birthday, TOM</h1>
+
+      <h2>Our Song 🎵</h2>
+
+      <img class="photo" src="memory6.jpg" alt="Our Song">
+
+      <p>
+        เพลงที่ DAO อยากให้ TOM ฟัง<br>
+        ในวันพิเศษนี้ ❤️
+      </p>
+
+      <div class="music-box">
+
+        <div class="music-title">
+          คนที่แสนดี
+        </div>
+
+        <div class="music-sub">
+          โทนี่ ผี feat. คิว Flure
+        </div>
+
+        <button
+          type="button"
+          class="play-button"
+          id="playButton">
+          ▶ เล่นเพลง
+        </button>
+
+        <div class="progress-wrap">
+
+          <input
+            class="progress"
+            id="progress"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            step="0.1">
+
+          <div class="time-row">
+            <span id="currentTime">0:00</span>
+            <span id="duration">0:00</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="small-note">
+        กดเล่นเพลงก่อนนะ แล้วเพลงจะเล่นต่อไปเรื่อย ๆ
+        ขณะเปิดดูของขวัญ 🎵
+      </p>
+
+      <div class="buttons">
+        <button onclick="nextPage()">
+          เปิดของขวัญ 🎁
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- หน้า 2 : Slideshow 22 รูป -->
+  <section class="page">
+    <div class="card">
+
+      <h2>Our Memories ❤️</h2>
+
+      <div class="slideshow-frame">
+
         <img class="slide active" src="slide01.jpg" alt="Memory 1">
         <img class="slide" src="slide02.jpg" alt="Memory 2">
         <img class="slide" src="slide03.jpg" alt="Memory 3">
@@ -75,167 +363,520 @@
         <img class="slide" src="slide20.jpg" alt="Memory 20">
         <img class="slide" src="slide21.jpg" alt="Memory 21">
         <img class="slide" src="slide22.jpg" alt="Memory 22">
+
       </div>
-      <div class="slide-count" id="slideCount">1 / 22</div>
 
-      <p>ของขวัญเล็ก ๆ จาก DAO<br>สำหรับคนพิเศษของฉัน</p>
-      <div class="buttons"><button onclick="nextPage()">เปิดของขวัญ 🎁</button></div>
-    </div>
-  </section>
-
-  <!-- หน้า 2 : เพลงจากไฟล์ MP3 -->
-  <section class="page">
-    <div class="card">
-      <h2>Our Song 🎵</h2>
-      <img class="photo" src="memory6.jpg" alt="Our Song">
-      <p>เพลงที่ DAO อยากให้ TOM ฟัง<br>ในวันพิเศษนี้ ❤️</p>
-
-      <div class="music-box">
-        <div class="music-title">คนที่แสนดี</div>
-        <div class="music-sub">โทนี่ ผี feat. คิว Flure</div>
-        <button type="button" class="play-button" id="playButton">▶ เล่นเพลง</button>
-        <div class="progress-wrap">
-          <input class="progress" id="progress" type="range" min="0" max="100" value="0" step="0.1">
-          <div class="time-row"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
-        </div>
+      <div class="slide-count" id="slideCount">
+        1 / 22
       </div>
-      <p class="small-note">กดเล่นเพลงครั้งเดียว แล้วเพลงจะเล่นต่อเมื่อกดไปหน้าถัดไป 🎵</p>
+
+      <p>
+        ของขวัญเล็ก ๆ จาก DAO<br>
+        สำหรับคนพิเศษของฉัน
+      </p>
+
       <div class="buttons">
-        <button class="secondary" onclick="prevPage()">‹ ย้อนกลับ</button>
-        <button onclick="nextPage()">ถัดไป ›</button>
+
+        <button
+          class="secondary"
+          onclick="prevPage()">
+          ‹ ย้อนกลับ
+        </button>
+
+        <button onclick="nextPage()">
+          ถัดไป ›
+        </button>
+
       </div>
+
     </div>
   </section>
+
 
   <!-- หน้า 3 -->
   <section class="page">
     <div class="card">
+
       <h2>Our Time Together ❤️</h2>
-      <div class="count">2 ปี 6 เดือน 15 วัน</div>
-      <p class="sub">ตั้งแต่วันที่ 5 มีนาคม 2024<br>จนถึงวันที่ 20 กันยายน 2026</p>
+
+      <div class="count">
+        2 ปี 6 เดือน 15 วัน
+      </div>
+
+      <p class="sub">
+        ตั้งแต่วันที่ 5 มีนาคม 2024<br>
+        จนถึงวันที่ 20 กันยายน 2026
+      </p>
+
       <img class="photo" src="memory1.jpg" alt="Memory 1">
-      <div class="buttons"><button class="secondary" onclick="prevPage()">‹ ย้อนกลับ</button><button onclick="nextPage()">ถัดไป ›</button></div>
+
+      <div class="buttons">
+
+        <button
+          class="secondary"
+          onclick="prevPage()">
+          ‹ ย้อนกลับ
+        </button>
+
+        <button onclick="nextPage()">
+          ถัดไป ›
+        </button>
+
+      </div>
+
     </div>
   </section>
+
 
   <!-- หน้า 4 -->
   <section class="page">
     <div class="card">
+
       <h2>Our Memories 💗</h2>
+
       <img class="photo" src="memory2.jpg" alt="Memory 2">
-      <p class="quote">รูปคู่ของเราอาจมีไม่เยอะ<br>แต่ทุกช่วงเวลาที่มีเธอ<br>เป็นความทรงจำที่ฉันยังจำได้เสมอ</p>
-      <div class="buttons"><button class="secondary" onclick="prevPage()">‹ ย้อนกลับ</button><button onclick="nextPage()">ถัดไป ›</button></div>
+
+      <p class="quote">
+        รูปคู่ของเราอาจมีไม่เยอะ<br>
+        แต่ทุกช่วงเวลาที่มีเธอ<br>
+        เป็นความทรงจำที่ฉันยังจำได้เสมอ
+      </p>
+
+      <div class="buttons">
+
+        <button
+          class="secondary"
+          onclick="prevPage()">
+          ‹ ย้อนกลับ
+        </button>
+
+        <button onclick="nextPage()">
+          ถัดไป ›
+        </button>
+
+      </div>
+
     </div>
   </section>
+
 
   <!-- หน้า 5 -->
   <section class="page">
     <div class="card">
-      <h2>Same Place,<br>Same Memory ❤️</h2>
+
+      <h2>
+        Same Place,<br>
+        Same Memory ❤️
+      </h2>
+
       <img class="photo" src="memory3.jpg" alt="Memory 3">
-      <p>บางครั้งเราอาจไม่ได้ถ่ายรูปคู่กันทุกที่<br>แต่เราก็อยู่ในความทรงจำเดียวกันเสมอ</p>
-      <div class="buttons"><button class="secondary" onclick="prevPage()">‹ ย้อนกลับ</button><button onclick="nextPage()">ถัดไป ›</button></div>
+
+      <p>
+        บางครั้งเราอาจไม่ได้ถ่ายรูปคู่กันทุกที่<br>
+        แต่เราก็อยู่ในความทรงจำเดียวกันเสมอ
+      </p>
+
+      <div class="buttons">
+
+        <button
+          class="secondary"
+          onclick="prevPage()">
+          ‹ ย้อนกลับ
+        </button>
+
+        <button onclick="nextPage()">
+          ถัดไป ›
+        </button>
+
+      </div>
+
     </div>
   </section>
+
 
   <!-- หน้า 6 -->
   <section class="page">
     <div class="card">
+
       <h2>More Memories 🫶</h2>
+
       <img class="photo" src="memory4.jpg" alt="Memory 4">
-      <p>ขอบคุณทุกช่วงเวลาที่เราได้ไปด้วยกัน<br>ทั้งวันธรรมดาและวันที่พิเศษ</p>
-      <div class="buttons"><button class="secondary" onclick="prevPage()">‹ ย้อนกลับ</button><button onclick="nextPage()">ถัดไป ›</button></div>
+
+      <p>
+        ขอบคุณทุกช่วงเวลาที่เราได้ไปด้วยกัน<br>
+        ทั้งวันธรรมดาและวันที่พิเศษ
+      </p>
+
+      <div class="buttons">
+
+        <button
+          class="secondary"
+          onclick="prevPage()">
+          ‹ ย้อนกลับ
+        </button>
+
+        <button onclick="nextPage()">
+          ถัดไป ›
+        </button>
+
+      </div>
+
     </div>
   </section>
+
 
   <!-- หน้า 7 -->
   <section class="page">
     <div class="card">
+
       <h2>One More Memory 💞</h2>
+
       <img class="photo" src="memory5.jpg" alt="Memory 5">
-      <p>แค่มีเธออยู่ในเรื่องราวของฉัน<br>หลาย ๆ วันที่ธรรมดา<br>ก็มีความหมายขึ้นมา</p>
-      <div class="buttons"><button class="secondary" onclick="prevPage()">‹ ย้อนกลับ</button><button onclick="nextPage()">ถัดไป ›</button></div>
+
+      <p>
+        แค่มีเธออยู่ในเรื่องราวของฉัน<br>
+        หลาย ๆ วันที่ธรรมดา<br>
+        ก็มีความหมายขึ้นมา
+      </p>
+
+      <div class="buttons">
+
+        <button
+          class="secondary"
+          onclick="prevPage()">
+          ‹ ย้อนกลับ
+        </button>
+
+        <button onclick="nextPage()">
+          ถัดไป ›
+        </button>
+
+      </div>
+
     </div>
   </section>
+
 
   <!-- หน้า 8 -->
   <section class="page">
     <div class="card">
+
       <div class="heart">💌</div>
+
       <h2>To TOM, with love</h2>
-      <p class="quote">สุขสันต์วันเกิดนะ TOM 🎂<br><br>ขอให้ปีนี้เป็นอีกปีที่ดีของเธอ<br>มีความสุขกับทุกสิ่งที่ทำ<br>ได้เจอแต่เรื่องดี ๆ<br>และมีรอยยิ้มเยอะ ๆ<br><br>ขอบคุณสำหรับทุกช่วงเวลา<br>ที่เราได้อยู่ด้วยกัน<br><br>ขอบคุณที่เข้ามาเป็น<br>ส่วนหนึ่งในชีวิตของฉัน<br><br>ขอให้วันเกิดปีนี้<br>เป็นจุดเริ่มต้นของ<br>อีกหนึ่งปีที่ดีมาก ๆ นะ ❤️</p>
-      <div class="buttons"><button class="secondary" onclick="prevPage()">‹ ย้อนกลับ</button><button onclick="nextPage()">หน้าสุดท้าย ❤️</button></div>
+
+      <p class="quote">
+
+        สุขสันต์วันเกิดนะ TOM 🎂
+
+        <br><br>
+
+        ขอให้ปีนี้เป็นอีกปีที่ดีของเธอ<br>
+        มีความสุขกับทุกสิ่งที่ทำ<br>
+        ได้เจอแต่เรื่องดี ๆ<br>
+        และมีรอยยิ้มเยอะ ๆ
+
+        <br><br>
+
+        ขอบคุณสำหรับทุกช่วงเวลา<br>
+        ที่เราได้อยู่ด้วยกัน
+
+        <br><br>
+
+        ขอบคุณที่เข้ามาเป็น<br>
+        ส่วนหนึ่งในชีวิตของฉัน
+
+        <br><br>
+
+        ขอให้วันเกิดปีนี้<br>
+        เป็นจุดเริ่มต้นของ<br>
+        อีกหนึ่งปีที่ดีมาก ๆ นะ ❤️
+
+      </p>
+
+      <div class="buttons">
+
+        <button
+          class="secondary"
+          onclick="prevPage()">
+          ‹ ย้อนกลับ
+        </button>
+
+        <button onclick="nextPage()">
+          หน้าสุดท้าย ❤️
+        </button>
+
+      </div>
+
     </div>
   </section>
+
 
   <!-- หน้า 9 -->
   <section class="page">
     <div class="card">
+
       <div class="heart">❤️</div>
+
       <h1>Thank You</h1>
-      <p class="quote">Thank you for being<br>in my life.</p><br>
+
+      <p class="quote">
+        Thank you for being<br>
+        in my life.
+      </p>
+
+      <br>
+
       <h2>I LOVE YOU ❤️</h2>
-      <p>Happy Birthday, TOM</p>
-      <div class="footer">With Love,<br><strong>DAO ❤️</strong></div>
-      <div class="buttons"><button class="secondary" onclick="prevPage()">‹ ย้อนกลับ</button><button onclick="goFirst()">กลับหน้าแรก</button></div>
+
+      <p>
+        Happy Birthday, TOM
+      </p>
+
+      <div class="footer">
+        With Love,<br>
+        <strong>DAO ❤️</strong>
+      </div>
+
+      <div class="buttons">
+
+        <button
+          class="secondary"
+          onclick="prevPage()">
+          ‹ ย้อนกลับ
+        </button>
+
+        <button onclick="goFirst()">
+          กลับหน้าแรก
+        </button>
+
+      </div>
+
     </div>
   </section>
+
 </div>
 
+
 <script>
+
   let currentPage = 0;
-  const pages = document.querySelectorAll('.page');
+
+  const pages =
+    document.querySelectorAll(".page");
+
+
   function showPage(index){
-    pages.forEach((page,i)=>page.classList.toggle('active',i===index));
-    window.scrollTo({top:0,behavior:'smooth'});
+
+    pages.forEach((page, i) => {
+
+      page.classList.toggle(
+        "active",
+        i === index
+      );
+
+    });
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
   }
-  function nextPage(){if(currentPage<pages.length-1){currentPage++;showPage(currentPage)}}
-  function prevPage(){if(currentPage>0){currentPage--;showPage(currentPage)}}
-  function goFirst(){currentPage=0;showPage(currentPage)}
 
-  // Slideshow หน้า 1: เปลี่ยนทุก 3 วินาที วน 22 รูป
-  const slides = document.querySelectorAll('.slide');
-  const slideCount = document.getElementById('slideCount');
+
+  function nextPage(){
+
+    if(currentPage < pages.length - 1){
+
+      currentPage++;
+
+      showPage(currentPage);
+
+    }
+
+  }
+
+
+  function prevPage(){
+
+    if(currentPage > 0){
+
+      currentPage--;
+
+      showPage(currentPage);
+
+    }
+
+  }
+
+
+  function goFirst(){
+
+    currentPage = 0;
+
+    showPage(currentPage);
+
+  }
+
+
+  /* รูป 22 รูป เปลี่ยนทุก 3 วินาที */
+
+  const slides =
+    document.querySelectorAll(".slide");
+
+  const slideCount =
+    document.getElementById("slideCount");
+
   let slideIndex = 0;
-  setInterval(()=>{
-    slides[slideIndex].classList.remove('active');
-    slideIndex = (slideIndex + 1) % slides.length;
-    slides[slideIndex].classList.add('active');
-    slideCount.textContent = (slideIndex + 1) + ' / ' + slides.length;
-  },3000);
 
-  // เพลง: เล่นต่อเนื่องแม้เปลี่ยนหน้า
-  const audio = document.getElementById('bgMusic');
-  const playButton = document.getElementById('playButton');
-  const progress = document.getElementById('progress');
-  const currentTimeEl = document.getElementById('currentTime');
-  const durationEl = document.getElementById('duration');
+
+  setInterval(() => {
+
+    slides[slideIndex]
+      .classList.remove("active");
+
+    slideIndex =
+      (slideIndex + 1) % slides.length;
+
+    slides[slideIndex]
+      .classList.add("active");
+
+    slideCount.textContent =
+      (slideIndex + 1)
+      + " / "
+      + slides.length;
+
+  }, 3000);
+
+
+  /* เพลงเล่นต่อแม้กดไปหน้าอื่น */
+
+  const audio =
+    document.getElementById("bgMusic");
+
+  const playButton =
+    document.getElementById("playButton");
+
+  const progress =
+    document.getElementById("progress");
+
+  const currentTimeEl =
+    document.getElementById("currentTime");
+
+  const durationEl =
+    document.getElementById("duration");
+
 
   function formatTime(seconds){
-    if(!Number.isFinite(seconds)) return '0:00';
-    const m = Math.floor(seconds/60);
-    const s = Math.floor(seconds%60).toString().padStart(2,'0');
-    return m + ':' + s;
+
+    if(!Number.isFinite(seconds)){
+      return "0:00";
+    }
+
+    const minutes =
+      Math.floor(seconds / 60);
+
+    const secs =
+      Math.floor(seconds % 60)
+      .toString()
+      .padStart(2,"0");
+
+    return minutes + ":" + secs;
+
   }
 
-  playButton.addEventListener('click', async ()=>{
-    if(audio.paused){
-      try{await audio.play()}catch(e){}
-    }else{
-      audio.pause();
-    }
-  });
 
-  audio.addEventListener('play',()=>{playButton.textContent='⏸ หยุดเพลง'});
-  audio.addEventListener('pause',()=>{playButton.textContent='▶ เล่นเพลง'});
-  audio.addEventListener('loadedmetadata',()=>{durationEl.textContent=formatTime(audio.duration)});
-  audio.addEventListener('timeupdate',()=>{
-    currentTimeEl.textContent=formatTime(audio.currentTime);
-    if(audio.duration){progress.value=(audio.currentTime/audio.duration)*100}
-  });
-  progress.addEventListener('input',()=>{
-    if(audio.duration){audio.currentTime=(progress.value/100)*audio.duration}
-  });
+  playButton.addEventListener(
+    "click",
+    async () => {
+
+      if(audio.paused){
+
+        try{
+          await audio.play();
+        }
+        catch(error){}
+
+      }
+      else{
+
+        audio.pause();
+
+      }
+
+    }
+  );
+
+
+  audio.addEventListener(
+    "play",
+    () => {
+
+      playButton.textContent =
+        "⏸ หยุดเพลง";
+
+    }
+  );
+
+
+  audio.addEventListener(
+    "pause",
+    () => {
+
+      playButton.textContent =
+        "▶ เล่นเพลง";
+
+    }
+  );
+
+
+  audio.addEventListener(
+    "loadedmetadata",
+    () => {
+
+      durationEl.textContent =
+        formatTime(audio.duration);
+
+    }
+  );
+
+
+  audio.addEventListener(
+    "timeupdate",
+    () => {
+
+      currentTimeEl.textContent =
+        formatTime(audio.currentTime);
+
+      if(audio.duration){
+
+        progress.value =
+          (audio.currentTime /
+          audio.duration) * 100;
+
+      }
+
+    }
+  );
+
+
+  progress.addEventListener(
+    "input",
+    () => {
+
+      if(audio.duration){
+
+        audio.currentTime =
+          (progress.value / 100)
+          * audio.duration;
+
+      }
+
+    }
+  );
+
 </script>
+
 </body>
 </html>
